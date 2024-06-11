@@ -91,7 +91,6 @@ console.log(Includes(arr, 5));
 
 // დაწერეთ პროგრამა მასივიდან ელემენტის ამოსაღებად.
 
-
 const findElem = (arr, elem) => {
   for (let i = 0; i < arr.length; i++) {
     if (arr[i] == elem) {
@@ -117,4 +116,45 @@ const findElemCount = (arr, elem) => {
 console.log(findElemCount(arr, 4));
 // დაწერეთ პროგრამა, რომ იპოვოთ მასივის ყველა ლუწი რიცხვის ჯამი.
 
+const evenSum = (arr) => {
+  let sum = 0;
+  for (let num of arr) {
+    if (num % 2 == 0) {
+      sum += num;
+    }
+  }
+  return sum;
+};
+
+console.log(evenSum([1, 2, 3, 4]));
+
 // დაწერეთ პროგრამა მასივში სიდიდით მეორე რიცხვის მოსაძებნად.
+
+const numArray = [5, 3, 8, 4, 1, 9, 7];
+
+const SecondMax = (arr) => {
+  let swapped = false;
+  let n = arr.length;
+  do {
+    swapped = false;
+    for (let i = 0; i < n - 1; i++) {
+      if (arr[i] > arr[i + 1]) {
+        [arr[i], arr[i + 1]] = [arr[i + 1], arr[i]];
+        swapped = true;
+      }
+    }
+    n--;
+  } while (swapped);
+  let num = -Infinity;
+  for (let i = arr.length - 1; i > 0; i--) {
+    if (arr[i] < arr[arr.length - 1]) {
+      num = arr[i];
+      return num;
+    }
+  }
+  
+};
+
+console.log(SecondMax(numArray));
+
+
