@@ -152,11 +152,9 @@ const SecondMax = (arr) => {
       return num;
     }
   }
-  
 };
 
 console.log(SecondMax(numArray));
-
 
 // const SecondMax = (arr) => {
 //   if (arr.length < 2) return null;
@@ -176,19 +174,24 @@ console.log(SecondMax(numArray));
 //   return secondMax === -Infinity ? null : secondMax;
 // };
 
-
 // დაწერეთ პროგრამა, რათა შეამოწმოთ არის თუ არა ორი მასივი ტოლი.
 
-let arr1 = [1,2,3,4,5,6];
-let arr2 = [2,3,4,5,6,7,8];
+let arr1 = [1, 2, 3, 4, 5, 6];
+let arr2 = [2, 3, 4, 5, 6, 7, 8];
 
-for(let i = 0; i < arr2.length; i++){
-  if(!arr2.includes(arr1[i])){
-    console.log("not equal")
+for (let i = 0; i < arr2.length; i++) {
+  if (!arr2.includes(arr1[i])) {
+    console.log("not equal");
   }
 }
 
 // დაწერეთ პროგრამა რომ ორი სორტირებული მასივის შერთდეს და გახდეს ერთი მასივი რომელიც ასევე სორტირებული იქნება.
+
+const sortarr1 = arr1.sort();
+const sortarr2 = arr2.sort();
+
+const concatedArr = [...sortarr1, sortarr2];
+
 // დაწერეთ პროგრამა სტრიქონების მასივის ანბანის მიხედვით დასალაგებლად.
 // დაწერეთ პროგრამა მრავალ მასივებს შორის საერთო ელემენტების მოსაძებნად.
 // შექმენით ობიექტი სახელწოდებით car თვისებებით მარკის, მოდელისა და წლისთვის. დაბეჭდეთ ობიექტი კონსოლზე.
