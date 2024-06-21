@@ -190,11 +190,51 @@ for (let i = 0; i < arr2.length; i++) {
 const sortarr1 = arr1.sort();
 const sortarr2 = arr2.sort();
 
-const concatedArr = [...sortarr1, sortarr2];
+const concatedArr = [...sortarr1, ...sortarr2];
+concatedArr.sort();
+console.log("coincaterArr:" + concatedArr);
 
 // დაწერეთ პროგრამა სტრიქონების მასივის ანბანის მიხედვით დასალაგებლად.
+const arrayOfStrings = ["DAVID, Lika, nika"];
+
+arrayOfStrings.sort((a, b) => {
+  if (a.toLowerCase() < b.toLowerCase()) {
+    return -1;
+  }
+  if (a.toLowerCase() > b.toLowerCase()) {
+    return 1;
+  }
+  return 0;
+});
+
 // დაწერეთ პროგრამა მრავალ მასივებს შორის საერთო ელემენტების მოსაძებნად.
+function common(...args) {
+  const firstArr = args[0];
+  for (let i = 0; i < args.length; i++) {
+    if(ar)
+  }
+}
+
+console.log(common([2, 5], [1, 5, 6], [7, 5]));
+
 // შექმენით ობიექტი სახელწოდებით car თვისებებით მარკის, მოდელისა და წლისთვის. დაბეჭდეთ ობიექტი კონსოლზე.
-// დაამატეთ მეთოდი car ობიექტს სახელწოდებით start, რომელიც ბეჭდავს "The car is starting!" როდესაც გამოძახება. გამოიძახეთ დაწყების მეთოდი.
+
+let car = {
+  type: "sedan",
+  year: "2021",
+};
+// დაამატეთ მეთოდი car ობიექტს სახელწოდებით start, რომელიც ბეჭდავს "The car is starting!" როდესაც გამოძახება. გამოიძახეთ დაწყების მეთოდი.\
+car = {
+  type: "sedan",
+  year: "2021",
+  start() {
+    const string = "car is starting";
+    console.log(string);
+    return string;
+  },
+};
+
+car.start();
+
 // შექმენით სხვა ობიექტი სახელად Person სახელის, ასაკისა და ქალაქის თვისებებით. დაბეჭდეთ სახელის თვისება წერტილის გამოყენებით.
 // დაამატეთ ახალი თვისება სახელწოდებით job, Person ობიექტს და მიანიჭეთ მას მნიშვნელობა. დაბეჭდეთ განახლებული ობიექტი.
