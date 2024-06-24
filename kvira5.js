@@ -210,31 +210,49 @@ arrayOfStrings.sort((a, b) => {
 // დაწერეთ პროგრამა მრავალ მასივებს შორის საერთო ელემენტების მოსაძებნად.
 function common(...args) {
   const firstArr = args[0];
-  for (let i = 0; i < args.length; i++) {
-    if(ar)
+  const common = [];
+  for (let i = 0; i < firstArr.length; i++) {
+    let count = 0;
+    for (let j = 1; j < args.length; j++) {
+      if (args[j].includes(firstArr[i])) {
+        count++;
+      }
+      if (count === args.length - 1) {
+        common.push(firstArr[i])
+      }
+    }
   }
+  return common;
 }
 
-console.log(common([2, 5], [1, 5, 6], [7, 5]));
+console.log(common([2, 5], [1, 2, 5, 6], [7, 5]));
 
 // შექმენით ობიექტი სახელწოდებით car თვისებებით მარკის, მოდელისა და წლისთვის. დაბეჭდეთ ობიექტი კონსოლზე.
 
-let car = {
+const car = {
   type: "sedan",
   year: "2021",
 };
 // დაამატეთ მეთოდი car ობიექტს სახელწოდებით start, რომელიც ბეჭდავს "The car is starting!" როდესაც გამოძახება. გამოიძახეთ დაწყების მეთოდი.\
-car = {
-  type: "sedan",
-  year: "2021",
-  start() {
-    const string = "car is starting";
-    console.log(string);
-    return string;
-  },
+
+car.start = () => {
+  const str = "The car is starting!";
+  console.log("The car is starting!");
+  return str;
 };
 
 car.start();
 
 // შექმენით სხვა ობიექტი სახელად Person სახელის, ასაკისა და ქალაქის თვისებებით. დაბეჭდეთ სახელის თვისება წერტილის გამოყენებით.
+const Person = {
+  name: "luka",
+  age: "24",
+  city: "tbilisi",
+};
+
+console.log(Person.name);
 // დაამატეთ ახალი თვისება სახელწოდებით job, Person ობიექტს და მიანიჭეთ მას მნიშვნელობა. დაბეჭდეთ განახლებული ობიექტი.
+
+Person.job = "developer";
+
+console.log(Person);
