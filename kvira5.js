@@ -256,3 +256,96 @@ console.log(Person.name);
 Person.job = "developer";
 
 console.log(Person);
+
+
+// პროექტი 10 - ქულების გამომთვლელი
+// შექმენით მარტივი JavaScript პროგრამა, რომელიც ითვლის შეფასებას მოსწავლის ქულების მიხედვით.
+// შეფასების სქემა შემდეგნაირია:
+// A: 90-100
+// B: 80-89
+// C: 70-79
+// D: 60-69
+// F: 0-59
+// პროგრამამ უნდა მოსთხოვოს მომხმარებელს შეიყვანოს რიცხვითი ქულა(0-დან 100-ის ჩათვლით ნებისმიერი რიცხვი).
+// გამოიყენეთ პირობითი ოპერატორები შეყვანილი რიცხვის შეფასების დასადგენად.
+// ეკრანზე გამოიტანეთ როგორც შეყვანილი რიცხვი ასევე შესაბამისი ასო.
+
+
+
+const countant =  () =>{
+    const num = +prompt("Enter the student's score: ");
+     console.log("Student's Score: " + num);
+    let grade;
+  switch (true) {
+        case (num >= 90 && num <= 100):
+            grade = 'A';
+            break;
+        case (num >= 80 && num < 90):
+            grade = 'B';
+            break;
+        case (num >= 70 && num < 80):
+            grade = 'C';
+            break;
+        case (num >= 60 && num < 70):
+            grade = 'D';
+            break;
+        case (num >= 0 && num < 60):
+            grade = 'F';
+            break;
+        default:
+            grade = 'Invalid score';
+    }
+    console.log("Grade: " + grade)
+}
+
+countant();
+
+// პროექტი 11 - Simple Math - მარტივი მათემატიკა
+// თქვენ ხშირად დაწერთ პროგრამებს, რომლებიც ეხება რიცხვებს. ხშირად, პროგრამაში მიღებული მონაცემები (input )რიცხვით მონაცემების ტიპებად უნდა გარდაქმნათ. დაწერეთ პროგრამა, რომელიც მოგთხოვთ ორ რიცხვს. ამობეჭდეთ ამ რიცხვების ჯამი, სხვაობა, ნამრავლი და განაყოფი.
+
+// მაგალითად:
+// > What is the first number? 10
+// > What is the second number? 5
+// > 10 + 5 = 15
+// > 10 - 5 = 5
+// > 10 * 5 = 50
+// > 10 / 5 = 2
+
+const simpleMath = () => {
+    const firstNumber = parseFloat(prompt("What is the first number? "));
+    const secondNumber = parseFloat(prompt("What is the second number? " ));
+
+    const sum = firstNumber + secondNumber;
+    const difference = firstNumber - secondNumber;
+    const product = firstNumber * secondNumber;
+    const quotient = firstNumber / secondNumber;
+
+    console.log(`${firstNumber} + ${secondNumber} = ${sum}`);
+    console.log(`${firstNumber} - ${secondNumber} = ${difference}`);
+    console.log(`${firstNumber} * ${secondNumber} = ${product}`);
+    console.log(`${firstNumber} / ${secondNumber} = ${quotient}`);
+}
+
+simpleMath();
+
+// 12
+
+
+const einstein = () => {
+  const massInKg = parseFloat(prompt("Enter the mass in kilograms:"));
+
+  // Speed of light in meters per second
+  const speedOfLight = 300000000;
+
+  // Calculate energy using E = mc^2
+  const energy = massInKg * speedOfLight ** 2;
+
+  // Print the result
+  console.log(
+    `Energy equivalent of ${massInKg} kg is approximately ${energy} joules.`
+  );
+};
+
+einstein();
+
+//13
