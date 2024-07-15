@@ -218,7 +218,7 @@ function common(...args) {
         count++;
       }
       if (count === args.length - 1) {
-        common.push(firstArr[i])
+        common.push(firstArr[i]);
       }
     }
   }
@@ -257,7 +257,6 @@ Person.job = "developer";
 
 console.log(Person);
 
-
 // პროექტი 10 - ქულების გამომთვლელი
 // შექმენით მარტივი JavaScript პროგრამა, რომელიც ითვლის შეფასებას მოსწავლის ქულების მიხედვით.
 // შეფასების სქემა შემდეგნაირია:
@@ -270,33 +269,31 @@ console.log(Person);
 // გამოიყენეთ პირობითი ოპერატორები შეყვანილი რიცხვის შეფასების დასადგენად.
 // ეკრანზე გამოიტანეთ როგორც შეყვანილი რიცხვი ასევე შესაბამისი ასო.
 
-
-
-const countant =  () =>{
-    const num = +prompt("Enter the student's score: ");
-     console.log("Student's Score: " + num);
-    let grade;
+const countant = () => {
+  const num = +prompt("Enter the student's score: ");
+  console.log("Student's Score: " + num);
+  let grade;
   switch (true) {
-        case (num >= 90 && num <= 100):
-            grade = 'A';
-            break;
-        case (num >= 80 && num < 90):
-            grade = 'B';
-            break;
-        case (num >= 70 && num < 80):
-            grade = 'C';
-            break;
-        case (num >= 60 && num < 70):
-            grade = 'D';
-            break;
-        case (num >= 0 && num < 60):
-            grade = 'F';
-            break;
-        default:
-            grade = 'Invalid score';
-    }
-    console.log("Grade: " + grade)
-}
+    case num >= 90 && num <= 100:
+      grade = "A";
+      break;
+    case num >= 80 && num < 90:
+      grade = "B";
+      break;
+    case num >= 70 && num < 80:
+      grade = "C";
+      break;
+    case num >= 60 && num < 70:
+      grade = "D";
+      break;
+    case num >= 0 && num < 60:
+      grade = "F";
+      break;
+    default:
+      grade = "Invalid score";
+  }
+  console.log("Grade: " + grade);
+};
 
 countant();
 
@@ -312,24 +309,23 @@ countant();
 // > 10 / 5 = 2
 
 const simpleMath = () => {
-    const firstNumber = parseFloat(prompt("What is the first number? "));
-    const secondNumber = parseFloat(prompt("What is the second number? " ));
+  const firstNumber = parseFloat(prompt("What is the first number? "));
+  const secondNumber = parseFloat(prompt("What is the second number? "));
 
-    const sum = firstNumber + secondNumber;
-    const difference = firstNumber - secondNumber;
-    const product = firstNumber * secondNumber;
-    const quotient = firstNumber / secondNumber;
+  const sum = firstNumber + secondNumber;
+  const difference = firstNumber - secondNumber;
+  const product = firstNumber * secondNumber;
+  const quotient = firstNumber / secondNumber;
 
-    console.log(`${firstNumber} + ${secondNumber} = ${sum}`);
-    console.log(`${firstNumber} - ${secondNumber} = ${difference}`);
-    console.log(`${firstNumber} * ${secondNumber} = ${product}`);
-    console.log(`${firstNumber} / ${secondNumber} = ${quotient}`);
-}
+  console.log(`${firstNumber} + ${secondNumber} = ${sum}`);
+  console.log(`${firstNumber} - ${secondNumber} = ${difference}`);
+  console.log(`${firstNumber} * ${secondNumber} = ${product}`);
+  console.log(`${firstNumber} / ${secondNumber} = ${quotient}`);
+};
 
 simpleMath();
 
 // 12
-
 
 const einstein = () => {
   const massInKg = parseFloat(prompt("Enter the mass in kilograms:"));
@@ -348,4 +344,120 @@ const einstein = () => {
 
 einstein();
 
-//13
+// პროექტი 13 - Tip Calculator - "ჩაის" კალკულატორი
+// ჩვეულებრივ, რესტორანში სადილის შემდეგ სერვისისთვის "ჩაის" ტოვებენ, როგორც წესი, შეერთებულ შტატებში ეს თანხა კვების ღირებულების 15%-ს ან მეტს აღწევს. შექმენით პროგრამა, რომელიც მოითხოვს თანხისა და პროცენტის შეყვანას და გეტყვით, რამდენი დოლარი უნდა დატოვოთ "ჩაის" სახით.
+
+// ასევე, პროგრამაში უნდა გქონდეთ ორი ფუნქცია:
+
+// ერთი input-ად მიიღებს სტრიქონს (დაფორმატებულს, როგორც $##.##), თავში შლის $ ნიშანს და აბრუნებს თანხას ათწილადის სახით. მაგალითად, 50.00 დოლარის შემთხვევაში მან უნდა დააბრუნოს 50.0
+
+// მეორე ფუნქცია input-ად მიიღებს ასევე სტრიქონს (დაფორმატებულს, როგორც ##%), ბოლოში შლის % ნიშანს და აბრუნებს პროცენტს ათწილადის სახით. მაგალითად, თუ input 15%-ია, ფუქცია 0.15-ს დააბრუნებს.
+
+// მაგალითად:
+// > How much was the meal? $50.00
+// > What percentage would you like to tip? 15%
+// > Leave $7.50
+
+const parseAmount = (amount) => {
+  return parseFloat(amount.replace("$", "")).toFixed(1);
+};
+
+function parsePercentage(percentageStr) {
+  return parseFloat(percentageStr.replace("%", "")) / 100;
+}
+
+function calculateTip() {
+  const amountStr = prompt("How much was the meal? ");
+  const percentageStr = prompt("What percentage would you like to tip? ");
+
+  const amount = parseAmount(amountStr);
+  const percentage = parsePercentage(percentageStr);
+
+  const tip = amount * percentage;
+}
+// პროექტი 14 - Retirement Calculator - საპენსიო კალკულატორი
+// თქვენმა კომპიუტერმა იცის, რომელია მიმდინარე წელი, ამიტომ ეს ინფორმაცია თქვენს პროგრამებში შეგიძლიათ, ჩართოთ. უბრალოდ, უნდა გაარკვიოთ, როგორ შეუძლია თქვენს პროგრამირების ენას ამ მონაცემის თქვენთვის მოწოდება.
+
+// შექმენით პროგრამა, რომელიც მოითხოვს თქვენი ამჟამინდელი ასაკისა და იმ ასაკის შეყვანას, როცა გსურთ, პენსიაზე გახვიდეთ; შემდეგ კი განსაზღვრავს, რამდენი წელი დაგრჩათ პენსიაზე გასვლამდე და კონკრეტულად რომელ წელს შეგიძლიათ ამის გაკეთება.
+
+// მაგალითად:
+// > What is your current age? 25
+// > At what age would you like to retire? 65
+// > You have 40 years left until you can retire.
+// > It's 2015, so you can retire in 2055.
+
+const date = new Date();
+const currentYear = date.getFullYear();
+
+const currentAge = +prompt("What is your current age? ")
+const retirementAge =  +prompt("At what age would you like to retire? ")
+
+const yearsLeft = retirementAge- currentAge;
+const retirementYear = currentYear + yearsLeft
+
+console.log(`You have ${yearsLeft} years left until you can retire.`)
+console.log(`It's ${currentYear}, so you can retire in ${retirementYear}.`)
+
+// პროექტი 15 - Area of a Rectangular Room - მართკუთხა ოთახის ფართობი
+// გლობალურ გარემოში მუშაობისას, თქვენ მოგიწევთ ინფორმაციის წარდგენა როგორც მეტრულ, ასევე იმპერიულ საზომ ერთეულებში.
+
+// შექმენით პროგრამა, რომელიც ითვლის ოთახის ფართობს. შესთავაზეთ მომხმარებელს ოთახის სიგრძე და სიგანე ფუტებში. შემდეგ აჩვენეთ ტერიტორია როგორც კვადრატულ ფუტში, ასევე - კვადრატულ მეტრში.
+
+// მაგალითად:
+// > What is the length of the room in feet? 15
+// > What is the width of the room in feet? 20
+// > You entered dimensions of 15 feet by 20 feet.
+// > The area is
+// > 300 square feet
+// > 27.871 square mete
+
+const SQUARE_FEET_TO_SQUARE_METERS = 0.092903;
+
+function calculateRoomArea() {
+  const lengthFeet = prompt("What is the length of the room in feet?");
+  const widthFeet = prompt("What is the width of the room in feet?");
+
+  const length = parseFloat(lengthFeet);
+  const width = parseFloat(widthFeet);
+
+  const areaSquareFeet = length * width;
+
+  const areaSquareMeters = areaSquareFeet * SQUARE_FEET_TO_SQUARE_METERS;
+
+  // Display the results
+  console.log(`${areaSquareFeet} square feet`);
+  console.log(
+    `The area is\n${areaSquareFeet} square feet\n${areaSquareMeters.toFixed(
+      3
+    )} square meters`
+  );
+}
+
+calculateRoomArea();
+
+// პროექტი 16 - Pizza Party - პიცის წვეულება
+// გაყოფა ყოველთვის ზუსტი არ არის და ზოგჯერ ისეთი პროგრამები უნდა დავწეროთ, რომლებშიც ათწილადების ნაცვლად ნაშთი მთელ რიცხვში უნდა გადავაქციოთ. დაწერეთ პროგრამა პიცების თანაბრად გასაყოფად. პროგრამამ input-ებად უნდა მოგთხოვოთ ხალხის რაოდენობა, პიცების რაოდენობა და თითო პიცაზე - ნაჭრების რაოდენობა. ნაჭრების რაოდენობა თანაბარი უნდა იყოს. აჩვენეთ პიცის ნაჭრების რაოდენობა, რომელიც თითოეულმა ადამიანმა უნდა შეჭამოს. თუ ნარჩენები რჩება, დაბეჭდეთ დარჩენილი ნაჭრების რაოდენობა.
+
+// მაგალითად:
+// > How many people? 8
+// > How many pizzas do you have? 2
+// > 8 people with 2 pizzas
+// > Each person gets 2 pieces of pizza.
+// > There are 0 leftover pieces.
+
+const people = +prompt('How many people? ')
+const pizzas = +prompt('How many pizzas do you have? ')
+const slices = +prompt('How many slices per pizza? ')
+const totalSlices = pizzas * slices
+
+console.log(`${people} people with ${pizzas} pizzas`)
+
+const slicesOfpizza = Math.floor(people / totalSlices);
+const leftOver = people % pizzas;
+
+if(slicesOfpizza === 1){
+    console.log(`Each person gets ${slicesOfpizza} piece of pizza.`)
+}else {
+    console.log(`Each person gets ${slicesOfpizza} piece of pizza.`)
+}
+console.log(`There are ${leftOver} leftover pieces.`)
